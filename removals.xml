@@ -1,0 +1,680 @@
+<!-- ABOUT -->
+	<!-- This screen needs work -->
+	<screen name="About" position="center,center" size="840,605" title="About" flags="wfNoBorder">
+		<!-- <ePixmap position="0,0" zPosition="-10" size="1100,605" pixmap="GHConcinnity-HD/menu/setupbg.png" />
+		<widget source="global.CurrentTime" render="Label" position=" 20,20" size=" 80,25" font="Regular;23" foregroundColor="black" backgroundColor="white" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="110,20" size="140,25" font="Regular;23" foregroundColor="orange" backgroundColor="white" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget> -->
+		<panel name="_menu" />
+		<eLabel text="About Dreambox"                       position="270,20"  size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="EnigmaVersion" render="Label"       position="40, 85"  size="700,35" font="Regular;26" backgroundColor="background" transparent="1" />
+		<widget source="ImageVersion"  render="Label"       position="40,130"  size="700,35" font="Regular;26" backgroundColor="background" transparent="1" />
+		<widget source="FPVersion"     render="Label"       position="40,175"  size="700,35" font="Regular;26" backgroundColor="background" transparent="1" />
+		<widget source="TunerHeader"   render="Label"       position="40,245"  size="700,35" font="Regular;26" backgroundColor="background" transparent="1" foregroundColor="yellow" />
+		<widget source="Tuner0"        render="Label"       position="40,290"  size="700,30" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="Tuner1"        render="Label"       position="40,320"  size="700,30" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="Tuner2"        render="Label"       position="40,350"  size="700,30" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="Tuner3"        render="Label"       position="40,380"  size="700,30" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="HDDHeader"     render="Label"       position="40,440"  size="700,30" font="Regular;26" backgroundColor="background" transparent="1" foregroundColor="yellow" />
+		<widget source="hddA"          render="Label"       position="40,485"  size="700,65" font="Regular;24" backgroundColor="background" transparent="1" />
+		<ePixmap                                            position="620,480" size="200,110" pixmap="GHConcinnity-HD/ghmod.png" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<eLabel text="Translation"                          position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+		<screen name="AutoTimerPreview" 				position="center,center" size="1100,605" title="Preview AutoTimer" 					flags="wfNoBorder">
+		<panel name="_main" />
+		<widget source="Title" render="Label" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<widget source="timerlist" render="Listbox" position="30,90" size="680,425" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel700x85.png" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos=( 10, 5), size=(640,26), text = 3, font = 0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=( 10,32), size=(640,24), text = 0, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=(	10,57), size=(400,24), text = 4, font = 1, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER),
+						MultiContentEntryText(pos=(410,57), size=(240,24), text = 2, font = 1, flags = RT_HALIGN_RIGHT|RT_VALIGN_CENTER),
+					],
+				 "fonts": [gFont("Regular", 22),gFont("Regular", 20)],
+				 "itemHeight": 85
+				}
+			</convert>
+		</widget>
+
+		<ePixmap position="720,66" zPosition="-9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap position="790,310" size="250,250" pixmap="GHConcinnity-HD/menu/autotimer.png"/>
+
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" 	position=" 30,570" 	size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" 	size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label"		position=" 80,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label"	position="340,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<!-- CDInfo -->
+	<screen name="CDInfo" position="center,center" size="840,605" title="CDInfo" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="CD Info" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="info" render="Label" position="30,87" size="780,50" font="Regular;22" backgroundColor="background" transparent="1" />
+		<eLabel position="30,160" size="780,2" backgroundColor="grey" />
+		<widget name="config" position="30,170" size="780,270" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel780x30.png" backgroundColor="background" transparent="1" />
+		<eLabel position="30,460" size="780,2" backgroundColor="grey" />
+		<widget source="info2" render="Label" position="30,470" size="780,90" font="Regular;21" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="550,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;20" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+		<screen name="ChannelSelection_summary" position="0,0" size="132,64">
+		<widget source="parent.ServiceEvent" render="Label" position="6,3" size="120,34" font="Regular;15" halign="center" valign="top">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<eLabel position="0,43" size="132,1" backgroundColor="white" />
+		<widget source="parent.ServiceEvent" render="Progress" position="68,51" size="55,8" borderWidth="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="6,44" size="58,18" font="Regular;17" halign="left" valign="top">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+	</screen>
+
+	<screen name="ChapterZap" position="500,600" size=" 280, 60" title="Chapter">
+		<widget name="chapter" position="35,15" size="110,25" font="Regular;23" />
+		<widget name="number" position="145,15" size="80,25" halign="right" font="Regular;23" />
+	</screen>
+
+	<screen name="CrashlogAutoSubmitConfiguration" position="center,center" size="1100,605" title="CrashlogAutoSubmit settings" flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="CrashlogAutoSubmit settings" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30,90" size="1040,270" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel1040x30.png" backgroundColor="background" transparent="1" />
+		<widget source="status" render="Label" position="30,495" size="1040,56" font="Regular;24" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="HelpWindow" position="338,420" zPosition="10" size="1,1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="VKeyIcon" pixmap="GHConcinnity-HD/buttons/text.png" position="990,572" size="70,30" transparent="1" alphatest="blend" />
+	</screen>
+
+		<!-- EPGRefresh -->
+	<screen name="EPGRefreshServiceEditor" position="center,center" size="1100,605" title="Edit Services to refresh" flags="wfNoBorder">
+		<panel name="_main" />
+		<widget source="Title" render="Label" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30,90" size="780,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap position="810, 66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="550,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="830,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="880,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="EPGRefreshConfiguration" position="center,center" size="1100,605" title="Configure EPGRefresh" flags="wfNoBorder">
+		<panel name="_main" />
+		<widget source="Title" render="Label" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30, 90" size="780,390" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<eLabel position="30,500" size="780, 2" backgroundColor="grey" />
+		<widget source="help" render="Label" position="30,510" size="780, 50" font="Regular;20" backgroundColor="background" transparent="1" />
+		<ePixmap position="810, 66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="550,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="830,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="880,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+	<screen name="genuineDreambox" position="center,center" size=" 840,605" title="Genuine Dreambox" flags="wfNoBorder">
+		<panel name="_setup" />
+		<widget source="Title" render="Label" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="infotext" position="70,120" zPosition="1" size="700,190" font="Regular;22" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="resulttext" position="70,340" zPosition="1" size="700, 50" font="Regular;35" halign="center" backgroundColor="background" transparent="1" />
+		<widget name="infotext2" position="70,470" zPosition="1" size="700, 80" font="Regular;22" halign="center" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget name="kRed" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="kGreen" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+		<screen name="GraphMultiEPG" position="center,center" size="1100,605" title="Electronic Program Guide" flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="Electronic Program Guide" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="timeline_text" position=" 0,80" size="1100,25" selectionDisabled="1" transparent="1" />
+		<eLabel position="20,110" size="1060,1" backgroundColor="grey" />
+		<widget name="list" position="20,120" size="1060,225" itemHeight="45" EntryBorderColor="grey" EntryBackgroundColor="#2f4974" EntryBackgroundColorSelected="#688cbf" scrollbarMode="showOnDemand" transparent="1" />
+		<widget name="timeline0" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline1" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline2" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline3" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline4" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline5" position="0,118" zPosition="1" size="1,230" pixmap="GHConcinnity-HD/images/timeline.png" />
+		<widget name="timeline_now" position="0,116" zPosition="2" size="19,234" pixmap="GHConcinnity-HD/images/timeline-now.png" alphatest="on" />
+		<eLabel position="20,352" size="1060,1" backgroundColor="grey" />
+		<widget source="Event" render="Label" position=" 30,362" size="1040, 28" font="Regular;22" foregroundColor="yellow" backgroundColor="background2" transparent="1">
+			<convert type="EventName">Name</convert>
+		</widget>
+		<widget source="Event" render="Label" position=" 30,402" size=" 65, 22" font="Regular;19" halign="right" backgroundColor="background2" transparent="1">
+			<convert type="EventTime">StartTime</convert>
+			<convert type="ClockToText"></convert>
+		</widget>
+		<widget source="Event" render="Label" position="100,402" size=" 80, 22" font="Regular;19" backgroundColor="background2" transparent="1">
+			<convert type="EventTime">EndTime</convert>
+			<convert type="ClockToText">Format:- %H:%M</convert>
+		</widget>
+		<widget source="Event" render="Progress" position="190,409" size="120, 12" borderWidth="1" borderColor="grey" backgroundColor="background2" transparent="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="Event" render="Label" position=" 30,437" size="1040,114" font="Regular;19" foregroundColor="grey" backgroundColor="background2" transparent="1">
+			<convert type="EventName">ExtendedDescription</convert>
+		</widget>
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget name="key_red" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="key_green" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+<!-- END EPG -->
+	<!-- Harddrive selection --> 
+	<screen name="HarddiskDriveSelection" position="center,center" size="840,605" title="Select HDD" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="Select HDD" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="hddlist" render="Listbox" position="30,90" size="780,450" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel780x75.png" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (60, 6), size = (600, 28), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_TOP, text = 0), 	# index 0 is the hdd_description
+						MultiContentEntryText(pos = (80, 44), size = (720, 25), font=1, flags = RT_HALIGN_LEFT|RT_VALIGN_BOTTOM, text = 2), 	# index 2 is the device info
+						MultiContentEntryPixmapAlphaTest(pos = (2, 8), size = (55, 55), png = 7), 						# index 3 is the device pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (58, 46), size = (15, 16), png = 8), 						# index 4 is the online state pixmap
+						MultiContentEntryPixmapAlphaTest(pos = (0, 73), size = (780, 2), png = 9), 						# index 3 is the div pixmap
+					],
+				"fonts": [gFont("Regular", 28),gFont("Regular", 20)],
+				"itemHeight": 75
+				}
+			</convert>
+		</widget>
+		<ePixmap pixmap="skin_default/div-h.png" position="20,485" zPosition="1" size="800,2" />
+		<widget source="introduction" render="Label" position="20,490" size="800,45" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 5,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="215,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="425,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="640,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position="45,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="255,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="465,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="680,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<!-- Harddisk setup -->
+	<screen name="HarddiskDriveSetup" position="center,center" size="840,605" title="Harddisk" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="Harddisk Setup" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="icon" render="Pixmap" position="150,90" size="88,126" alphatest="on">
+			<convert type="ValueToPixmap">Path</convert>
+		</widget>
+		<widget source="model" render="Label" position="315,90" size="380,25" font="Regular;23" />
+		<widget source="capacity" render="Label" position="315,140" size="380,25" font="Regular;23" />
+		<widget source="bus" render="Label" position="315,191" size="380,25" font="Regular;23" />
+		<widget name="config" position="30,245" size="780,60" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="skin_default/div-h.png" position="20,485" zPosition="1" size="800,2" />
+		<widget source="introduction" render="Label" position="20,490" size="800,45" zPosition="10" font="Regular;21" halign="center" valign="center" backgroundColor="background" transparent="1" />
+		<widget name="HelpWindow" pixmap="skin_default/vkey_icon.png" position="370,370" zPosition="1" size="1,1" transparent="1" alphatest="on" />
+		<ePixmap pixmap="skin_default/div-h.png" position="20,540" zPosition="1" size="800,2" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 5,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="215,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="425,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="640,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 45,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="255,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="465,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="680,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<!-- Harddisk mountpoint selection -->
+	<screen name="HarddiskMountpointBrowser" position="center,center" size="840,605" title="Select mountpoint" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="Select mountpoint" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="filelist" position="120,80" size="600,450" scrollbarMode="showOnDemand" />
+		<ePixmap pixmap="skin_default/div-h.png" position="140,540" zPosition="1" size="560,2" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 5,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="215,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="425,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="640,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 45,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="255,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="465,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="680,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="HarddiskWait" position="center,center" size=" 840,605" flags="wfNoBorder">
+		<panel name="_setup" />
+		<widget source="Title" render="Label" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="wait" position="70,130" size="700,275" transparent="1" />
+	</screen>
+
+	<screen name="InfoBarMoviePlayerSummary" position="0,0" size="132,64">
+		<widget source="session.CurrentService" render="Label" position="6,3" size="120,34" font="Regular;15" halign="center" valign="center">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<eLabel position="0,43" size="132,1" backgroundColor="white" />
+		<widget source="session.CurrentService" render="Progress" position="68,51" size="55,8" borderWidth="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="6,44" size="58,20" font="Regular;17" halign="left" valign="top">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text="" position="6,44" zPosition="1" size="58,20">
+			<convert type="ConfigEntryTest">config.usage.blinking_display_clock_during_recording,True,CheckSourceBoolean</convert>
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+	<screen name="InfoBarSummary" position="0,0" size="132,64">
+		<widget source="session.CurrentService" render="Label" position="6,3" size="120,34" font="Regular;15" halign="center" valign="top">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<eLabel position="0,43" size="132,1" backgroundColor="white" />
+		<widget source="session.Event_Now" render="Progress" position="68,51" size="55,8" borderWidth="1">
+			<convert type="EventTime">Progress</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="6,44" size="58,20" font="Regular;17" halign="left" valign="top">
+			<convert type="ClockToText">Format:%H:%M</convert>
+		</widget>
+		<widget source="session.RecordState" render="FixedLabel" text="" position="6,44" zPosition="1" size="58,20">
+			<convert type="ConfigEntryTest">config.usage.blinking_display_clock_during_recording,True,CheckSourceBoolean</convert>
+			<convert type="ConditionalShowHide">Blink</convert>
+		</widget>
+	</screen>
+
+		<!-- MyTubePlayer -->
+	<screen name="MyTubeHistoryScreen" position="center,230" size=" 692,420" title="MyTubeHistoryScreen..." backgroundColor="black" zPosition="6">
+		<widget source="historylist" render="Listbox" position="10,10" zPosition="7" size="740,406" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel780x30.png" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">{"template": [ MultiContentEntryText(pos = (10, 2), size = (420, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name ], "fonts": [gFont("Regular", 22),gFont("Regular", 18)], "itemHeight": 30 }</convert>
+		</widget>
+	</screen>
+	<screen name="MyTubePlayer" position="70,580" size="1140,110" title="InfoBar" flags="wfNoBorder">
+		<ePixmap position="0,0" zPosition="-1" size="1140,110" pixmap="GHConcinnity-HD/infobars/infobarmovie.png" />
+		<widget source="session.CurrentService" render="Label" position="30,11" size="850,36" font="Regular;26" valign="top" noWrap="1" backgroundColor="black" transparent="1">
+			<convert type="ServiceName">Name</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="890,12" size=" 80,25" font="Regular;23" halign="right" backgroundColor="black" transparent="1">
+			<convert type="ClockToText">Default</convert>
+		</widget>
+		<widget source="global.CurrentTime" render="Label" position="980,12" size="140,25" font="Regular;23" halign="right" backgroundColor="black" foregroundColor="grey" transparent="1">
+			<convert type="ClockToText">Format:%d.%m.%Y</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Progress" position="10,49" size="1120,8" zPosition="1" pixmap="GHConcinnity-HD/infobars/progress.png" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position=" 20,75" size="120,28" font="Arial;24" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Position</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position="1000,75" size="120,28" font="Arial;24" halign="right" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Remaining</convert>
+		</widget>
+		<widget source="session.CurrentService" render="Label" position=" 470,75" size="200,24" font="Regular;22" halign="center" foregroundColor="black" backgroundColor="grey" transparent="1">
+			<convert type="ServicePosition">Length</convert>
+		</widget>
+	</screen>
+	<screen name="MyTubePlayerMainScreen" 			position="center,center" size=" 840,605" title="MyTubePlayerMainScreen..." 			flags="wfNoBorder" >
+		<panel name="_setup" />
+		<eLabel text="MyTubePlayer" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<widget name="config" 						position="30, 90" size="780,28" zPosition="3" scrollbarMode="showNever" transparent="1"/>
+		<widget source="feedlist" render="Listbox" 	position="30,140" size="780,400" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel780x100.png" backgroundColor="background" transparent="1" >
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (100,[
+						MultiContentEntryPixmapAlphaTest(pos = (10, 12), size = (100, 75), png = 4), # index 4 is the thumbnail
+						MultiContentEntryText(pos = (120, 10), size = (630, 25), font=0, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1), # index 1 is the Title
+						MultiContentEntryText(pos = (120, 40), size = (370, 20), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 5, color=0x8A8787, color_sel=0x8A8787), # index 5 is the Published Date
+						MultiContentEntryText(pos = (120, 70), size = (370, 20), font=1, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 6, color=0x8A8787, color_sel=0x8A8787), # index 6 is the Views Count
+						MultiContentEntryText(pos = (490, 40), size = (255, 20), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 7, color=0x8A8787, color_sel=0x8A8787), # index 7 is the duration
+						MultiContentEntryText(pos = (490, 70), size = (255, 20), font=1, flags = RT_HALIGN_RIGHT | RT_VALIGN_TOP| RT_WRAP, text = 8, color=0x8A8787, color_sel=0x8A8787), # index 8 is the ratingcount
+					]),
+				"state": (100,[
+						MultiContentEntryText(pos = (10, 10), size = (735, 28), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (10, 40), size = (735, 50), font=3, flags = RT_HALIGN_LEFT | RT_VALIGN_TOP| RT_WRAP, text = 1, color=0x8A8787, color_sel=0x8A8787), # index 2 is the description
+					])
+				},
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18),gFont("Regular", 26),gFont("Regular", 20)],
+				"itemHeight": 100
+			}
+			</convert>
+		</widget>
+		<widget name="HelpWindow" 					position="338,505" size="1,1" zPosition="10" transparent="1" alphatest="on" />	
+
+		<widget name="VKeyIcon" position="750,570" size=" 70,30" pixmap="GHConcinnity-HD/buttons/text.png" alphatest="on" transparent="1" />
+
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" 	position=" 30,570" 	size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" 	position="290,570" 	size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png"	position="550,570" 	size="35,27" alphatest="blend" />
+		<widget name="key_red" 			position=" 80,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="key_green" 		position="340,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="key_yellow" 		position="600,573" 	size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+
+		<widget name="thumbnail" 	position="0,0" size="100,75" alphatest="on"/> # fake entry for dynamic thumbnail resizing, currently there is no other way doing this.
+	</screen>
+	<screen name="MyTubeSettingsScreen" position="center,center" size="840,605" title="MyTubeSettingsScreen" flags="wfNoBorder">
+		<panel name="_setup" />
+		<widget name="title" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30,90" size="780,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget name="key_red" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="key_green" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="MyTubeSuggestionsListScreen" 		position="center,230" 	 size=" 692,260" title="MyTubeSuggestionsListScreen..." backgroundColor="black" zPosition="6" >
+		<widget source="suggestionslist" render="Listbox" position="10,5" zPosition="7" size="670,260" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel700x25.png" backgroundColor="background" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 1), size = (420, 25), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryText(pos = (440, 1), size = (180, 24), font=1, flags = RT_HALIGN_RIGHT, text = 1), # index 1 are the rtesults
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 25
+				}
+			</convert>
+		</widget>
+	</screen>
+	<screen name="MyTubeTasksScreen" 				position="center,center" size=" 840,605" title="MyTubeTasksScreen" 					flags="wfNoBorder" >
+		<panel name="_setup" />
+		<widget name="title" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<widget source="tasklist" render="Listbox" position="30,90" size="780,450" zPosition="3" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 3), size = (250, 24), font=1, flags = RT_HALIGN_LEFT, text = 1), # index 1 is the name
+						MultiContentEntryText(pos = (270, 3), size = (180, 24), font=1, flags = RT_HALIGN_RIGHT, text = 2), # index 2 is the state
+						MultiContentEntryProgress(pos = (460, 3), size = (150, 24), percent = -3), # index 3 should be progress 
+						MultiContentEntryText(pos = (630, 3), size = (120, 24), font=1, flags = RT_HALIGN_RIGHT, text = 4), # index 4 is the percentage
+					],
+				"fonts": [gFont("Regular", 22),gFont("Regular", 18)],
+				"itemHeight": 30
+				}
+			</convert>
+		</widget>
+
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" 	position=" 30,570" 	size="35,27" alphatest="blend" />
+		<widget name="key_red"  					position=" 80,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>	
+	<screen name="MyTubeVideoHelpScreen" position="center,center" size="840,605" title="MyTubePlayerHelpScreen..." flags="wfNoBorder">
+		<panel name="_setup" />
+		<widget name="title" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="detailtext" position="30,90" size="780,450" font="Regular;24" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<widget name="key_red" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="MyTubeVideoInfoScreen" 			position="center,center" size="1100,605" title="MyTubePlayerMainScreen..." 			flags="wfNoBorder" >
+		<panel name="_main" />
+		<widget name="title" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<ePixmap position=" 30, 90" size="743,145" zPosition="5" pixmap="GHConcinnity-HD/strip.png" alphatest="blend" />
+		<widget source="infolist" render="Listbox" 	position="194,112" size="550, 97" zPosition="6" scrollbarMode="showNever" selectionDisabled="1" backgroundPixmap="GHConcinnity-HD/images/1.png" transparent="1">
+			<convert type="TemplatedMultiContent">
+			{"templates":
+				{"default": (145,[
+						MultiContentEntryPixmapAlphaTest(pos = (  0, 0), size = (130, 97), png = 0), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (140, 0), size = (130, 97), png = 1), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (280, 0), size = (130, 97), png = 2), # index 0 is the thumbnail
+						MultiContentEntryPixmapAlphaTest(pos = (420, 0), size = (130, 97), png = 3), # index 0 is the thumbnail							
+					]),
+				"state": (145,[
+						MultiContentEntryText(pos = (0, 35), size = (740, 65), font=2, flags = RT_HALIGN_LEFT | RT_VALIGN_CENTER| RT_WRAP, text = 0), # index 0 is the name
+					])
+				},
+				"fonts": [gFont("Regular", 20),gFont("Regular", 14),gFont("Regular", 28)],
+				"itemHeight": 145
+			}
+			</convert>
+		</widget>
+		<widget name="starsbg" position="780,120" size="300,65" pixmap="GHConcinnity-HD/starbg.png" zPosition="5" transparent="1" alphatest="on" />
+		<widget name="stars" position="819,135" size="222,35" pixmap="GHConcinnity-HD/star.png" zPosition="6" transparent="1" />
+		<widget name="author" position="50,255" size="500,25" zPosition="10" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="duration" position="50,285" size="500,25" zPosition="10" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="published" position="50,315" size="500,25" zPosition="10" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="views" position="50,345" size="500,25" zPosition="10" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="tags" position="50,375" size="1000,25" zPosition="10" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="detailtext" position="50,420" size="1000,120" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<widget name="key_red" position="80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget name="thumbnail" position="0,0" size="130,97" alphatest="on" />
+	</screen>
+
+		<!-- SimpleRSS -->
+	<screen name="RSSSetup" position="center,center" size=" 840,605" title="Simple RSS Reader Setup" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="Simple RSS Reader Setup" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30,90" size="780,450" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel780x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="230,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="430,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="630,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="280,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="480,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="680,573" size="150,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="RSSEntryView" position="center,center" size="840,605" title="Simple RSS Reader" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="RSSEntryView" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="info" render="Label" position="30, 75" size="780,32" font="Regular;24" backgroundColor="background" transparent="1" />
+		<eLabel position="30,110" size="780,2" backgroundColor="grey" />
+		<widget name="content" position="30,120" size="780,430" font="Regular; 22" backgroundColor="background" transparent="1" />
+	</screen>
+	<screen name="RSSFeedView" 						position="center,center" size=" 840,605" title="Simple RSS Reader" 		 			flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="RSSFeedView" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<widget source="info" render="Label" 		position="30, 75" size="780,28" font="Regular;24" backgroundColor="background" transparent="1"/>
+		<eLabel 									position="30,110" size="780,2" backgroundColor="grey" />
+		<widget source="content" render="Listbox" 	position="30,120" size="780,300" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel780x75.png" backgroundColor="background" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos=(10, 5), size=(760, 65), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0)
+					],
+				 "fonts": [gFont("Regular", 20)],
+				 "itemHeight": 75
+				}
+			</convert>
+		</widget>
+		<eLabel 									position="30,430" size="780,2" backgroundColor="grey"/>
+		<widget source="summary" render="Label" 	position="30,440" size="780,108" font="Regular;22"  backgroundColor="background" transparent="1"/>
+		<ePixmap position="740,570" size="70,30" pixmap="GHConcinnity-HD/buttons/menu.png" alphatest="blend"/>
+	</screen>
+	<screen name="RSSOverview" position="center,center" size="840,605" title="Simple RSS Reader" flags="wfNoBorder">
+		<panel name="_setup" />
+
+		<eLabel text="RSSOverview" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="info" render="Label" position="30, 75" size="780,28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<eLabel position="30,110" size="780,2" backgroundColor="grey" />
+		<widget name="content" position="30,120" size="780,400" selectionPixmap="GHConcinnity-HD/menu/sel780x100.png" enableWrapAround="1" backgroundColor="background" transparent="1" />
+		<eLabel position="30,530" size="780,2" backgroundColor="grey" />
+		<widget source="summary" render="Label" position="30,536" size="780,28" font="Regular;22" backgroundColor="background" transparent="1" />
+		<ePixmap position="740,570" size="70,30" pixmap="GHConcinnity-HD/buttons/menu.png" alphatest="blend" />
+	</screen>
+
+	<!-- SHOUTcast -->
+	<screen name="SHOUTcastWidget" position="center,center" size="1100,605" title="SHOUTcast" flags="wfNoBorder">
+		<panel name="_main" />
+		<widget name="headertext" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="statustext" position=" 30,80" size="1040,378" zPosition="1" font="Regular;22" halign="center" valign="center" backgroundColor="black" transparent="0" />
+		<widget name="list" position=" 30,80" size="1040,378" zPosition="2" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel1040x63.png" backgroundColor="black" transparent="0" />
+		<eLabel position=" 30,470" size="1040,2" backgroundColor="grey" />
+		<widget name="cover" position=" 30,475" size="110,110" backgroundColor="background" alphatest="blend" />
+		<widget name="titel" position="180,480" size="680,25" font="Regular;20" backgroundColor="background" transparent="1" />
+		<widget name="station" position="180,505" size="680,50" font="Regular;20" backgroundColor="background" transparent="1" />
+		<widget name="console" position="180,530" size="680,25" font="Regular;20" backgroundColor="background" transparent="1" />
+		<ePixmap position="950,520" size="120,35" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/SHOUTcast/shoutcast-logo1-fs8.png" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="550,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="830,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="880,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="SHOUTcastSetup" position="center,center" size=" 840,605" title="SHOUTcast Setup" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="SHOUTcast Setup" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position="30,90" size="780,450" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="SHOUTcastStreamripperRecordingPath" position="center,center" size=" 840,605" title="Select record path for streamripper" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="Select record path for streamripper" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="target" position="30, 75" size="780,32" font="Regular;26" backgroundColor="background" transparent="1" />
+		<eLabel position="30,120" size="780,2" backgroundColor="grey" />
+		<widget name="filelist" position="30,130" size="780,420" itemHeight="30" scrollbarMode="showOnDemand" selectionPixmap="GHConcinnity-HD/menu/sel900x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+	<screen name="UserDialog" position="center,center" size="1100,605" title="UserDialog" flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="UserDialog" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<ePixmap position="330,66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap position="20,375" size="250,180" pixmap="GHConcinnity-HD/menu/net.png" alphatest="on" />
+		<widget name="config" position="380, 90" size="700,420" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel700x30.png" backgroundColor="background" transparent="1" />
+		<widget source="introduction" render="Label" position="380,520" size="700, 25" font="Regular;22" halign="center" backgroundColor="black" transparent="1" />
+		<widget name="HelpWindow" position="510,430" zPosition="10" size="1,1" />
+		<widget name="VKeyIcon" pixmap="GHConcinnity-HD/buttons/text.png" position="535,572" size="70,30" transparent="1" alphatest="on" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="UserManager" 						position="center,center" size="1100,605" title="UserManager" 						flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="UserManager" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<ePixmap position="330,66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap position="20,375" size="250,180" pixmap="GHConcinnity-HD/menu/net.png" alphatest="on"/>
+
+		<widget source="config" render="Listbox" 	position="380,90" size="700,420" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel780x60.png" backgroundColor="background" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (80, 4), size = (590, 50), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the name
+						MultiContentEntryPixmapAlphaTest(pos = (10, 6), size = (48, 48), png = 3), # index 4 is the status pixmap
+					],
+				"fonts": [gFont("Regular", 40)],
+				"itemHeight": 60
+				}
+			</convert>
+		</widget>
+		<widget source="introduction" render="Label" position="380,520" size="700, 25" font="Regular;22" halign="center" backgroundColor="black" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="550,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position="80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+
+	<!-- WeatherPlugin -->
+	<screen name="WeatherPluginEntriesListConfigScreen" position="center,center" size=" 840,605" title="WeatherPlugin: List of Entries" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="WeatherPlugin: List of Entries" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="city" render="Label" position=" 30, 80" size="150, 28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="language" render="Label" position="180, 80" size="580, 28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<eLabel position=" 30,120" size="780, 2" backgroundColor="grey" />
+		<widget name="entrylist" position=" 30,130" size="780,420" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel780x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="550,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;20" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="WeatherPluginEntryConfigScreen" position="center,center" size=" 840,605" title="WeatherPlugin: Edit Entry" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="WeatherPlugin: Edit Entry" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget name="config" position=" 30,90" size="780,450" itemHeight="30" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel780x30.png" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" position="290,570" size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/blue.png" position="550,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label" position="340,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_blue" render="Label" position="600,573" size="200,26" zPosition="1" font="Regular;20" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="WeatherPlugin" position="center,center" size=" 840,605" title="Weather Plugin" flags="wfNoBorder">
+		<panel name="_setup" />
+		<eLabel text="WeatherPlugin" position="270,20" size="540,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<widget source="caption" render="Label" position=" 70,100" size="370,27" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="currentTemp" render="Label" position=" 70,140" size="370,27" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="condition" render="Label" position=" 70,200" size="370,25" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="wind_condition" render="Label" position=" 70,230" size="370,25" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="humidity" render="Label" position=" 70,260" size="370,25" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="weekday1" render="Label" position="490,105" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="weekday1_temp" render="Label" position="490,135" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="weekday1_icon" position="670,100" size=" 72,72" alphatest="blend" />
+		<widget source="weekday2" render="Label" position="490,225" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="weekday2_temp" render="Label" position="490,255" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="weekday2_icon" position="670,220" size=" 72,72" alphatest="blend" />
+		<widget source="weekday3" render="Label" position="490,345" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="weekday3_temp" render="Label" position="490,375" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="weekday3_icon" position="670,340" size=" 72,72" alphatest="blend" />
+		<widget source="weekday4" render="Label" position="490,465" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="weekday4_temp" render="Label" position="490,495" size="150,25" halign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget name="weekday4_icon" position="670,460" size=" 72,72" alphatest="blend" />
+		<widget source="statustext" render="Label" position=" 70,100" size="700,200" font="Regular;24" halign="center" valign="center" backgroundColor="background" transparent="1" />
+		<ePixmap position="740,570" size="70,30" pixmap="GHConcinnity-HD/buttons/menu.png" alphatest="blend" />
+	</screen>
+
+	<screen name="WlanScan" 						position="center,center" size="1100,605" title="Choose a Wireless Network" 			flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="Choose a Wireless Network" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1"/>
+
+		<ePixmap position="385,66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap position="20,375" size="250,180" pixmap="GHConcinnity-HD/menu/net.png" alphatest="on"/>
+
+		<widget source="info" render="Label" 	position="423, 80" size="650,28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<eLabel 								position="423,120" size="650,2" backgroundColor="grey" />
+		<widget source="list" render="Listbox" 	position="423,130" size="650,375" scrollbarMode="showOnDemand" enableWrapAround="1" selectionPixmap="GHConcinnity-HD/menu/sel700x75.png" backgroundColor="background" transparent="1" >
+			<convert type="TemplatedMultiContent">
+				{"template": [
+						MultiContentEntryText(pos = (10, 8), size = (650, 35), font=0, flags = RT_HALIGN_LEFT, text = 0), # index 0 is the essid
+						MultiContentEntryText(pos = (10, 43), size = (210, 25), font=1, flags = RT_HALIGN_LEFT, text = 5), # index 5 is the interface
+						MultiContentEntryText(pos = (210, 43), size = (210, 25), font=1, flags = RT_HALIGN_LEFT, text = 4), # index 0 is the encryption
+						MultiContentEntryText(pos = (420, 8), size = (200, 25), font=1, flags = RT_HALIGN_LEFT, text = 2), # index 0 is the signal
+						MultiContentEntryText(pos = (420, 43), size = (200, 25), font=1, flags = RT_HALIGN_LEFT, text = 3), # index 0 is the maxrate
+					],
+				"fonts": [gFont("Regular", 28),gFont("Regular", 20)],
+				"itemHeight": 75
+				}
+			</convert>
+		</widget>
+
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" 	position=" 30,570" 	size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/green.png" 	position="290,570" 	size="35,27" alphatest="blend" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/yellow.png"	position="550,570" 	size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label"		position=" 80,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_green" render="Label"	position="340,573" 	size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+		<widget source="key_yellow" render="Label"	position="600,573" 	size="200,26" zPosition="1" font="Regular;20" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>
+	<screen name="WlanStatus" position="center,center" size="1100,605" title="Wireless Network State" flags="wfNoBorder">
+		<panel name="_main" />
+		<eLabel text="W-LAN Status" position="270,20" size="800,43" font="Regular;35" halign="right" foregroundColor="black" backgroundColor="white" transparent="1" />
+		<ePixmap position="385,66" zPosition="9" size="28,508" pixmap="GHConcinnity-HD/menu/seph.png" />
+		<ePixmap position="20,375" size="250,180" pixmap="GHConcinnity-HD/menu/net.png" alphatest="on" />
+		<widget source="IF" render="Label" position=" 420, 80" size="440,28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget source="Statustext" render="Label" position=" 866, 80" size="160,28" font="Regular;24" backgroundColor="background" transparent="1" />
+		<widget name="statuspic" position="1030, 80" size=" 35,27" pixmaps="GHConcinnity-HD/buttons/green.png,GHConcinnity-HD/buttons/grey.png" transparent="1" alphatest="blend" />
+		<eLabel position=" 420,120" size="660,2" backgroundColor="grey" />
+		<widget source="LabelBSSID" render="Label" position="460,170" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="LabelESSID" render="Label" position="460,210" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="LabelQuality" render="Label" position="460,250" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="LabelSignal" render="Label" position="460,290" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="LabelBitrate" render="Label" position="460,330" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="LabelEnc" render="Label" position="460,370" size="250,35" valign="center" font="Regular;22" foregroundColor="grey" backgroundColor="background" transparent="1" />
+		<widget source="BSSID" render="Label" position="770,170" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="ESSID" render="Label" position="770,210" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="quality" render="Label" position="770,250" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="signal" render="Label" position="770,290" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="bitrate" render="Label" position="770,330" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<widget source="enc" render="Label" position="770,370" size="280,35" valign="center" font="Regular;22" backgroundColor="background" transparent="1" />
+		<ePixmap pixmap="GHConcinnity-HD/buttons/red.png" position=" 30,570" size="35,27" alphatest="blend" />
+		<widget source="key_red" render="Label" position=" 80,573" size="200,26" zPosition="1" font="Regular;22" halign="left" foregroundColor="black" backgroundColor="grey" transparent="1" />
+	</screen>

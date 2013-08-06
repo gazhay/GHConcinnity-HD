@@ -1,0 +1,143 @@
+<screen name="VIXMenu" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget source="menu" render="Listbox" position="10,107" size="503,420" selectionPixmap="ViX-Common/buttons/FocusBar_H38x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryText(pos = (20,0), size = (465,38), flags = RT_HALIGN_LEFT, text = 1), # index 0 is the MenuText,
+				],
+				"fonts": [gFont("Regular",28)],
+				"itemHeight": 38
+				}
+			</convert>
+		</widget>
+		<widget source="menu" render="Listbox" position="30,570" size="458,60" scrollbarMode="showNever" selectionDisabled="1" transparent="1">
+			<convert type="TemplatedMultiContent">
+				{"template": [
+				MultiContentEntryText(pos = (0,0),size = (450,60),flags = RT_HALIGN_LEFT|RT_VALIGN_BOTTOM|RT_WRAP,text = 2),# index 0 is the MenuText,
+				],
+				"fonts": [gFont("Regular",20)],
+				"itemHeight": 60
+				}
+			</convert>
+		</widget>
+		<panel name="MenuRed2Panel" />
+	</screen>
+	<screen name="VIXPowerManager" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="config" position="10,107" size="503,450" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" scrollbarMode="showOnDemand" />
+		<widget name="standbystatus" position="10,520" size="250,55" font="Regular;20" zPosition="5" />
+		<widget name="deepstandbystatus" position="10,575" size="250,55" font="Regular;20" zPosition="5" />
+		<widget name="guirestartstatus" position="260,520" size="250,55" font="Regular;20" zPosition="6" />
+		<widget name="rebootstatus" position="260,575" size="250,55" font="Regular;20" zPosition="6" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+	</screen>
+	<screen name="VIXSetup" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="config" position="10,107" size="503,526" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+	</screen>
+	<screen name="VIXSwap" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="autostart_off" position="40,183" zPosition="1" pixmap="icons/lock_off.png" size="32,32" alphatest="on" />
+		<widget name="autostart_on" position="40,183" zPosition="2" pixmap="icons/lock_on.png" size="32,32" alphatest="on" />
+		<widget name="lab1" position="90,183" size="400,30" font="Regular;20" valign="center" transparent="0" backgroundColor="window-bg" />
+		<widget name="lab2" position="40,233" size="150,30" font="Regular;20" valign="center" transparent="0" />
+		<widget name="labplace" position="190,233" size="320,30" font="Regular;20" valign="center" backgroundColor="window-bg" />
+		<widget name="lab3" position="40,263" size="150,30" font="Regular;20" valign="center" transparent="0" />
+		<widget name="labsize" position="190,263" size="220,30" font="Regular;20" valign="center" backgroundColor="window-bg" />
+		<widget name="lab4" position="40,293" size="150,30" font="Regular;20" valign="center" transparent="0" />
+		<widget name="inactive" position="190,293" size="100,30" font="Regular;20" valign="center" halign="center" backgroundColor="red" />
+		<widget name="active" position="190,293" size="100,30" zPosition="1" font="Regular;20" valign="center" halign="center" backgroundColor="green" />
+		<panel name="MenuGreen1Panel" />
+		<panel name="MenuYellow1Panel" />
+		<panel name="MenuBlue1Panel" />
+	</screen>
+	<screen name="VIXSoftcamManager" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="lab1" position="40,270" size="170,20" font="Regular;22" halign="right" zPosition="2" backgroundColor="window-bg" transparent="0" valign="center" />
+		<widget name="list" position="225,271" size="240,150" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+		<widget name="lab2" position="40,140" size="170,20" font="Regular;22" halign="right" zPosition="2" backgroundColor="window-bg" transparent="0" />
+		<widget name="activecam" position="225,142" size="240,75" font="Regular;20" halign="left" zPosition="2" backgroundColor="window-bg" transparent="0" noWrap="1" />
+		<ePixmap pixmap="buttons/key_menu.png" position="470,663" size="35,25" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="buttons/key_info.png" position="470,690" size="35,25" alphatest="blend" transparent="1" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+		<panel name="MenuYellow1Panel" />
+		<panel name="MenuBlue1Panel" />
+		<applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(25)
+		</applet>
+	</screen>
+	<screen name="VIXSoftcamLog" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="list" position="10,107" size="503,526" font="Regular;14" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" />
+	</screen>
+	<screen name="VIXAutoStartCam" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="connect" position="220,220" size="64,64" zPosition="2" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy24.png" transparent="1" alphatest="blend" />
+		<widget name="lab1" position="10,133" halign="center" size="503,60" zPosition="1" font="Regular;20" valign="top" transparent="0" />
+	</screen>
+	<screen name="VIXSoftcamMenu" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="config" position="10,107" size="503,526" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" zPosition="2" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+	</screen>
+	<screen name="VIXStartCam" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="connect" position="220,220" size="64,64" zPosition="2" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy24.png" transparent="1" alphatest="blend" />
+		<widget name="lab1" position="10,133" halign="center" size="503,60" zPosition="1" font="Regular;20" valign="top" transparent="0" />
+	</screen>
+	<screen name="VIXStopCam" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="connect" position="220,220" size="64,64" zPosition="2" pixmaps="/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy1.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy2.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy3.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy4.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy5.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy6.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy7.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy8.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy9.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy10.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy11.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy12.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy13.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy14.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy15.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy17.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy18.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy19.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy20.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy21.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy22.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy23.png,/usr/lib/enigma2/python/Plugins/SystemPlugins/ViX/images/busy24.png" transparent="1" alphatest="blend" />
+		<widget name="lab1" position="10,133" halign="center" size="503,60" zPosition="1" font="Regular;20" valign="top" transparent="0" />
+	</screen>
+	<screen name="VIXBackupManager" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="lab1" position="10,107" size="503,50" font="Regular;20" zPosition="2" transparent="0" halign="center" />
+		<widget name="list" position="10,190" size="503,400" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+		<widget name="backupstatus" position="12,608" size="503,20" font="Regular;20" zPosition="5" valign="top" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+		<panel name="MenuYellow1Panel" />
+		<panel name="MenuBlue1Panel" />
+		<ePixmap pixmap="buttons/key_menu.png" position="470,663" size="35,25" alphatest="blend" transparent="1" />
+		<ePixmap pixmap="buttons/key_info.png" position="470,690" size="35,25" alphatest="blend" transparent="1" />
+		<applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(25)
+		</applet>
+	</screen>
+	<screen name="VIXBackupManagerMenu" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="config" position="10,107" size="503,435" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+		<widget name="HelpWindow" pixmap="buttons/vkey_icon.png" position="100,490" size="541,720" zPosition="1" transparent="1" alphatest="on" />
+		<ePixmap pixmap="buttons/key_text.png" position="470,663" size="35,25" zPosition="4" alphatest="on" transparent="1" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+		<panel name="MenuYellow1Panel" />
+		<panel name="MenuBlue1Panel" />
+		<applet type="onLayoutFinish">
+			self["config"].instance.setItemHeight(25)
+		</applet>
+	</screen>
+	<screen name="VIXBackupManagerLogView" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="list" position="10,107" size="503,526" font="Regular;15" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" />
+	</screen>
+	<screen name="VIXImageManager" position="0,0" size="541,720" flags="wfNoBorder" backgroundColor="transparent">
+		<panel name="MenuPanel" />
+		<widget name="lab1" position="10,107" size="503,50" font="Regular;20" zPosition="2" transparent="0" halign="center" />
+		<widget name="list" position="10,190" size="503,435" selectionPixmap="ViX-Common/buttons/FocusBar_H25x503.png" foregroundColor="window-fg" backgroundColor="window-bg" transparent="0" scrollbarMode="showOnDemand" enableWrapAround="1" />
+		<widget name="backupstatus" position="12,608" size="503,20" font="Regular;20" zPosition="5" valign="top" />
+		<panel name="MenuRed1Panel" />
+		<panel name="MenuGreen1Panel" />
+		<panel name="MenuYellow1Panel" />
+		<panel name="MenuBlue1Panel" />
+		<ePixmap pixmap="buttons/key_menu.png" position="470,663" size="35,25" alphatest="blend" transparent="1" />
+		<applet type="onLayoutFinish">
+			self["list"].instance.setItemHeight(25)
+		</applet>
+	</screen>
