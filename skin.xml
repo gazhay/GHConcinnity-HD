@@ -159,33 +159,35 @@
 	</screen>
 
 	<screen name="FullscreenTopPanel">
-		<ePixmap pixmap="panel/top.png" position="0,0" size="1280,70" zPosition="-1" />
-		<widget source="global.CurrentTime" render="Label" position="1040,10" size="100,28" font="Regular;26" foregroundColor="black" backgroundColor="white" halign="right" transparent="1" zPosition="1">
+		<ePixmap pixmap="panel/top.png" position="50,15" size="1280,70" zPosition="-1" />
+		<widget source="global.CurrentTime" render="Label" position="1090,25" size="100,28" font="Regular;26" foregroundColor="black" backgroundColor="white" halign="right" transparent="1" zPosition="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
-		<widget source="global.CurrentTime" render="Label" position="790,40"  size="350,25" font="Regular;20" foregroundColor="black" backgroundColor="white" halign="right" transparent="1" zPosition="1">
+		<widget source="global.CurrentTime" render="Label" position="840,55"  size="350,25" font="Regular;20" foregroundColor="black" backgroundColor="white" halign="right" transparent="1" zPosition="1">
 			<convert type="ClockToText">Date</convert>
 		</widget>
-		<ePixmap pixmap="panel/bottom.png" position="0,640" size="1280,40" zPosition="-1" />
+		<ePixmap pixmap="panel/bottom.png" position="50,665" size="1280,40" zPosition="-1" />
 	</screen>
+
 	<screen name="FullscreenTitlePanel">
-		<widget source="Title" render="Label" position="20,25" size="850,43" font="OS_Bold;32" transparent="1" foregroundColor="black" backgroundColor="white" zPosition="1" />
+		<widget source="Title" render="Label" position="70,40" size="850,43" font="OS_Bold;32" transparent="1" foregroundColor="black" backgroundColor="white" zPosition="1" />
 	</screen>
+
 	<screen name="FullscreenRed1Panel">
-		<ePixmap pixmap="buttons/red.png" position="90,650" size="25,25" alphatest="blend" transparent="1" />
-		<widget name="key_red"    position="130,645" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="black" backgroundColor="darkgrey" />
+		<ePixmap pixmap="buttons/red.png" position="140,675" size="25,25" alphatest="blend" transparent="1" />
+		<widget name="key_red"    position="180,670" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="lightgrey" backgroundColor="darkgrey" />
 	</screen>
 	<screen name="FullscreenGreen1Panel">
-		<ePixmap pixmap="buttons/green.png" position="330,650" size="25,25" alphatest="blend" transparent="1" />
-		<widget name="key_green"  position="370,645" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="black" backgroundColor="darkgrey" />
+		<ePixmap pixmap="buttons/green.png" position="380,675" size="25,25" alphatest="blend" transparent="1" />
+		<widget name="key_green"  position="420,670" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="lightgrey" backgroundColor="darkgrey" />
 	</screen>
 	<screen name="FullscreenYellow1Panel">
-		<ePixmap pixmap="buttons/yellow.png" position="580,650" size="25,25" alphatest="blend" transparent="1" />
-		<widget name="key_yellow" position="610,645" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="black" backgroundColor="darkgrey" />
+		<ePixmap pixmap="buttons/yellow.png" position="630,675" size="25,25" alphatest="blend" transparent="1" />
+		<widget name="key_yellow" position="670,670" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="lightgrey" backgroundColor="darkgrey" />
 	</screen>
 	<screen name="FullscreenBlue1Panel">
-		<ePixmap pixmap="buttons/blue.png" position="810,650" size="25,25" alphatest="blend" transparent="1" />
-		<widget name="key_blue"   position="850,645" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="black" backgroundColor="darkgrey" />
+		<ePixmap pixmap="buttons/blue.png" position="860,675" size="25,25" alphatest="blend" transparent="1" />
+		<widget name="key_blue"   position="900,670" size="240,30" zPosition="1" font="Regular;20" halign="left" transparent="1" valign="center" noWrap="1" foregroundColor="lightgrey" backgroundColor="darkgrey" />
 	</screen>
 	<!-- /Panels -->
 <!-- 1140,270
@@ -1136,43 +1138,47 @@ transparent="1">
 		<panel name="FullscreenBlue1Panel" />
 	</screen>
 	<!-- need to reduce timeline width. -->
-	<screen name="GraphicalEPGPIG" position="center,center" size="1180,690" backgroundColor="lightgrey" transparent="0" flags="wfNoBorder">
+	<screen name="GraphicalEPGPIG" position="center,center" size="1280,720" backgroundColor="lightgrey" transparent="0" flags="wfNoBorder">
 		<panel name="FullscreenTopPanel"   />
 		<panel name="FullscreenTitlePanel" /> 
+		<eLabel position="0,0"    size="1280,15"  zPosition="20" backgroundColor="black" foregroundColor="black" alphatest="blend" transparent="0" />
+		<eLabel position="0,705"  size="1280,15"  zPosition="20" backgroundColor="black" foregroundColor="black" alphatest="blend" transparent="0" />
+		<eLabel position="0,0"    size="50,720"   zPosition="20" backgroundColor="black" foregroundColor="black" alphatest="blend" transparent="0" />
+		<eLabel position="1230,0" size="50,720"   zPosition="20" backgroundColor="black" foregroundColor="black" alphatest="blend" transparent="0" />
 		<!-- PIG : Picture In Guide -->
-		<eLabel                                 position="792,73" size="382,215" zPosition="2" backgroundColor="darkgrey" foregroundColor="window-bg" />
-		<widget source="session.VideoPicture"   position="795,75" size="378,211" zPosition="3" backgroundColor="#ff000000" render="Pig" />
+		<eLabel                                 position="842,88" size="382,215" zPosition="2" backgroundColor="darkgrey" foregroundColor="window-bg" />
+		<widget source="session.VideoPicture"   position="845,90" size="378,211" zPosition="3" backgroundColor="#ff000000" render="Pig" />
 		<!-- Channel name label -->
-		<eLabel                                 position="795,75" size="378,25"  zPosition="4" backgroundColor="pig-channel-name" />
+		<eLabel                                 position="845,90" size="378,25"  zPosition="4" backgroundColor="pig-channel-name" />
 		<!-- What you watching? -->
-		<widget source="session.CurrentService" position="795,75" size="378,25" font="Regular;22" render="Label" foregroundColor="event-frgrnd" borderWidth="1" borderColor="black" transparent="1" valign="center" halign="left" noWrap="1" zPosition="5" >
+		<widget source="session.CurrentService" position="845,90" size="378,25" font="Regular;22" render="Label" foregroundColor="event-frgrnd" borderWidth="1" borderColor="black" transparent="1" valign="center" halign="left" noWrap="1" zPosition="5" >
 			<convert type="ServiceName">Name</convert>
 		</widget> 
 		<!-- EPG Event (what you are focussed on) -->
-		<widget source="Event" render="Label" position="20,70" size="577,30" halign="left"  backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
+		<widget source="Event" render="Label" position="70,85" size="577,30" halign="left"  backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
 			<convert type="EventName">Name</convert>
 		</widget>
-		<widget source="Event" render="Label" position="603,70" size="75,30" halign="right" backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
+		<widget source="Event" render="Label" position="653,85" size="75,30" halign="right" backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
 			<convert type="EventTime">StartTime</convert>
 			<convert type="ClockToText">Format:%H:%M</convert>
 		</widget>
-		<widget source="Event" render="Label" position="680,70" size="100,30" halign="left" backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
+		<widget source="Event" render="Label" position="730,85" size="100,30" halign="left" backgroundColor="lightgrey" font="Regular;24" noWrap="1" transparent="0" foregroundColor="burntorange">
 			<convert type="EventTime">EndTime</convert>
 			<convert type="ClockToText">Format:- %H:%M</convert>
 		</widget>
-		<widget source="Event" render="Label" position="20,100" zPosition="25" size="776,190" font="OS_Bold;19" foregroundColor="black" backgroundColor="lightgrey" valign="top">
+		<widget source="Event" render="Label" position="70,115" zPosition="25" size="776,190" font="OS_Bold;19" foregroundColor="black" backgroundColor="lightgrey" valign="top">
 			<convert type="EventName">FullDescription</convert>
 		</widget>
 		<!-- Timeline bits (reduce 1280 to 1180) -->
 		<!-- <eLabel position="0,290" size="1180,29" font="Regular;24" halign="center" valign="center" zPosition="19" backgroundColor="lightgrey" transparent="0" /> -->
 
-		<widget name="lab1"          position="0,290" size="1180,390" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="lightgrey" transparent="0" />
-		<widget name="timeline_text" position="0,290" size="1180,30"  backgroundColor="lightgrey" foregroundColor="burntorange" transparent="1" zPosition="0" alphatest="on" />
-		<widget name="bouquetlist"   position="0,73"  size=" 792,217" backgroundColor="lightgrey" foregroundColor="black" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="26" transparent="0" />
-		<widget name="list" position="0,317" size="1180,327" backgroundColor="lightgrey" EntryForegroundColorSelected="black" EntryBackgroundColorNowSelected="blue" EntryForegroundColorNowSelected="black" EntryForegroundColor="black" EntryBackgroundColor="lightgrey" RecordForegroundColorSelected="black" ZapForegroundColorSelected="black" scrollbarMode="showNever" zPosition="1" transparent="0" />
-		<widget name="timeline_now"  position="0,317" zPosition="3" size="19,327" pixmap="epg/timeline-now.png" alphatest="on" />
-		<ePixmap pixmap="buttons/key_menu.png" position="20,651" size="35,25" alphatest="blend" transparent="1" zPosition="1" />
-		<eLabel position="0,680" size="1180,40" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="black" transparent="0" />
+		<widget name="lab1"          position="50,305" size="1180,390" font="Regular;24" halign="center" valign="center" zPosition="20" backgroundColor="lightgrey" transparent="0" />
+		<widget name="timeline_text" position="50,305" size="1180,30"  backgroundColor="lightgrey" foregroundColor="burntorange" transparent="1" zPosition="0" alphatest="on" />
+		<widget name="bouquetlist"   position="50,88"  size=" 792,217" backgroundColor="lightgrey" foregroundColor="black" foregroundColorSelected="black" scrollbarMode="showNever" zPosition="26" transparent="0" />
+		<widget name="list" position="50,332" size="1180,337" backgroundColor="lightgrey" EntryForegroundColorSelected="black" EntryBackgroundColorNowSelected="blue" EntryForegroundColorNowSelected="black" EntryForegroundColor="black" EntryBackgroundColor="lightgrey" RecordForegroundColorSelected="black" ZapForegroundColorSelected="black" scrollbarMode="showNever" zPosition="1" transparent="0" />
+		<widget name="timeline_now"  position="50,332" zPosition="3" size="19,337" pixmap="epg/timeline-now.png" alphatest="on" />
+		<ePixmap pixmap="buttons/key_menu.png" position="70,676" size="35,25" alphatest="blend" transparent="1" zPosition="1" />
+		<eLabel position="100,705" size="1180,40" font="Regular;24" halign="center" valign="center" zPosition="19" backgroundColor="black" transparent="0" />
 		<panel name="FullscreenRed1Panel"    />
 		<panel name="FullscreenGreen1Panel"  />
 		<panel name="FullscreenYellow1Panel" />
@@ -2828,8 +2834,7 @@ transparent="1">
 		<widget name="PlayerList" position="0,0" size="215,e-100" backgroundColor="#80000000" selectionPixmap="/usr/lib/enigma2/python/Plugins/Extensions/OnDemand/icons/selectbar.png" transparent="1" scrollbarMode="showNever" />
 		<ePixmap name="menu" position="e-95,e-70" zPosition="2" size="35,25" pixmap="skin_default/buttons/key_menu.png" transparent="1" alphatest="on" />
 		<ePixmap name="info" position="e-45,e-70" zPosition="2" size="35,25" pixmap="skin_default/buttons/key_info.png" transparent="1" alphatest="on" />
-		<widget source="global.CurrentTime" render="Label" position="895,12" size=" 75,25" font="Regular;23" halign="right" backgroundColor="black" 
-transparent="1">
+		<widget source="global.CurrentTime" render="Label" position="895,12" size=" 75,25" font="Regular;23" halign="right" backgroundColor="black" transparent="1">
 			<convert type="ClockToText">Default</convert>
 		</widget>
 		<widget source="global.CurrentTime" render="Label" position="980,12" size="140,25" font="Regular;23" halign="right" backgroundColor="black" foregroundColor="blue" transparent="1">
